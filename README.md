@@ -28,12 +28,36 @@ constructor() ERC20("Degen", "DGN") Ownable(msg.sender) {
 }
 ```
 
-## Contract Summary
+## Usage
 
-* The contract is an ERC-20 token contract named 'Degen' with the symbol 'DGN'. It includes functionalities to manage token rewards, in-game store items, and player interactions.
-  
-* Players can earn tokens through specific in-game actions and use them to purchase items from the in-game store.
-  
-* The contract supports the creation of buy and sell requests for in-game items, enabling players to trade tokens for assets and vice versa.
-  
-* Transactions are executed on the Avalanche blockchain, ensuring efficient and cost-effective token transfers within the gaming ecosystem.
+1. **Mint Tokens**: 
+   - Only the owner can mint tokens using the `mint` function.
+   - **Example**: `mint(address to, uint256 amount)`
+
+2. **Transfer Tokens**: 
+   - Users can transfer tokens to others using the `transferTokens` function.
+   - **Example**: `transferTokens(address _receiver, uint amount)`
+
+3. **Check Balance**: 
+   - Users can check their token balance with the `checkBalance` function.
+   - **Example**: `checkBalance()`
+
+4. **Burn Tokens**: 
+   - Users can burn tokens to redeem items using the `burnTokens` function.
+   - **Example**: `burnTokens(uint amount)`
+
+5. **Game Store**: 
+   - Check the item prices using the `gameStore` function.
+   - **Example**: `gameStore()`
+
+6. **Redeem Tokens**: 
+   - Use the `redeemTokens` function to get items by providing a choice number.
+   - **Choices**:
+     - `1` for Profile_pic (costs 200 tokens)
+     - `2` for Gen_Tee (costs 100 tokens)
+     - `3` for Gen_Cap (costs 75 tokens)
+   - **Example**: `redeemTokens(uint choice)`
+
+7. **Get Player Items**: 
+   - Retrieve your owned items with the `getPlayerItems` function.
+   - **Example**: `getPlayerItems()`
